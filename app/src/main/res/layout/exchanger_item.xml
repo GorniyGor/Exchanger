@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="?android:selectableItemBackground">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/countryIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/presence_online" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCurrencyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/blackTitle"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        tools:text="SEK"
+        app:layout_constraintBottom_toTopOf="@id/tvDescription"
+        app:layout_constraintStart_toEndOf="@id/countryIcon"
+        app:layout_constraintTop_toTopOf="@id/countryIcon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/graySubtitle"
+        tools:text="Swedish Krona"
+        app:layout_constraintStart_toStartOf="@id/tvCurrencyName"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrencyName"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:inputType="numberDecimal"
+        android:digits="0123456789,"
+        android:maxLength="6"
+        android:ellipsize="end"
+        android:textColor="@color/blackTitle"
+        android:textStyle="bold"
+        android:background="@android:color/transparent"
+        android:hint="0"
+        tools:text="2154.49"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rateLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/grayLine"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/et_rate"
+        app:layout_constraintStart_toStartOf="@id/et_rate"
+        app:layout_constraintEnd_toEndOf="@id/et_rate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
